@@ -30,6 +30,12 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+  footer {
+  position:absolute;
+   bottom:0;
+   width:100%;
+   height:180px;   /* Height of the footer */
+}
 </style>
 </head>
 <body>
@@ -40,3 +46,5 @@ body {
   <a href="contact.php">Contact</a>
   <a href="login.php"  style="float:right">Login</a>
 </div>
+  
+  

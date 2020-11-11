@@ -1,9 +1,10 @@
 <?php
 
+  session_start();
   $server="localhost"; 
   $username="root";
   $password="";
-  $database="hostel";
+  $database="railway_management_system";
   
   $conn=mysqli_connect($server,$username,$password,$database);
   

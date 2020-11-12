@@ -28,6 +28,13 @@ body {
   background-color: #4CAF50;
   color: white;
 }
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 300px;
+}
 </style>
 
 <div class="topnav">

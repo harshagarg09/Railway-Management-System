@@ -13,11 +13,14 @@
         $result = mysqli_query($conn, $check_user);
         
         if(mysqli_num_rows($result)>0)
-		{
+	{
             header('location:dashboard.php');
         }
         else{
-            header('location:Admin.php');
+			?>
+			<h1 align='center'> Wrong UserName/Password</h1>
+			<?php
+            die();
         }
            
     }

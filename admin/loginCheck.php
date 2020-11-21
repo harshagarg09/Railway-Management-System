@@ -17,7 +17,7 @@
             header('location:dashboard.php');
         }
         else{
-            header('location:../Admin.php');
+            header('location:Admin.php');
         }
            
     }

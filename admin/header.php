@@ -2,7 +2,7 @@
 <head>
 <style>
 
- .container{
+.container{
       height: auto;
       padding: 100px;
       margin: auto;
@@ -41,12 +41,37 @@
   background-color: #ddd;
   color: black;
 }
+.topnav {
+  overflow: hidden;
+  background-color: #332;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 20px 30px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
 h1 {
   border-top: 50px solid black;
-  align : center;
 }
 </style>
 </head>
 
 <body>
-<h1 align = "center">Railway Reservation</h1>
+<div class="topnav">
+  <a href="logout.php"  style="float:right">Logout</a>
+  <a href="#" style="float:center">Railway Reservation</a>
+</div>

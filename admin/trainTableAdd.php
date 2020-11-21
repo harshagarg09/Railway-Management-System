@@ -15,6 +15,19 @@
 		$notBook = 0;
 		$sleeper = "SL";
 		
+		$today = date( "Y-m-d");
+		$dateTimestamp1 = strtotime($date); 
+		$dateTimestamp2 = strtotime($today); 
+		if($dateTimestamp1<$dateTimestamp2)
+		{?>
+			<h2 align ="center">
+			<?php echo "Entered the Wrong Date";
+			?></h2>
+			<?php
+			die();
+		}
+		
+		
 		$query = "INSERT INTO `traincoach` (`db_trainNo`,`db_AC`,`db_Sleeper`,`db_date`) VALUES ('$trainNo','$ACcoach','$SleeperCoach','$date')";
 					
 		$res = mysqli_query($conn,$query);

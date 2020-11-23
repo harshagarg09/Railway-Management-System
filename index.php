@@ -1,7 +1,9 @@
 <?php include('header.php'); ?>
 <?php include('connection.php'); ?>
-<div style="padding-left:700px">
-  <h2>Indian Railways</h2>
+<div>
+	<marquee behavior="scroll" direction="left" height="10%" scrollamount="10">
+		<h2>Welcome to Indian Railways</h2>
+	</marquee>
 </div>
 
 <img src="rail.jpg" alt="Indian Railways" class="center">

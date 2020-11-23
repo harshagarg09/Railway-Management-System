@@ -24,7 +24,6 @@
 			<?php echo "Entered the Wrong Date";
 			?></h2>
 			<?php
-			die();
 		}
 		
 		
@@ -36,12 +35,6 @@
 		}
 		
 		
-		// sql to delete a record
-		$sqlq = "DELETE FROM `$trainNo` ";
-
-
-		if (mysqli_query($conn, $sqlq)) {
-			
 			for($j = 1;$j<=$ACcoach;$j++){
 				
 				for($i = 1; $i<19; $i++) {
@@ -71,10 +64,6 @@
 				}
 			}
 		
-		} 
-		else {
-		  echo "Error : " . mysqli_error($conn);
-		}
 		header('location:success.php');
     }
 	else

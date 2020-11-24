@@ -18,8 +18,8 @@
 		$today = date( "Y-m-d");
 		$newDate = date('Y-m-d', strtotime('+15 days', strtotime($today)));
 		$dateTimestamp1 = strtotime($date); 
-		$dateTimestamp2 = strtotime($today);
-		$dateTimestamp3 = strtotime($newDate);
+		$dateTimestamp2 = strtotime($today); 
+		$dateTimestamp3 = strtotime($newDate); 
 		if($dateTimestamp1<$dateTimestamp2)
 		{?>
 			<h2 align ="center">
@@ -38,6 +38,8 @@
 			//header('location:trainTableAdd.php');
 			die();
 		}
+		
+		
 		$check_user = " SELECT * FROM booking_system WHERE db_trainNo = '$trainNo' and db_date ='$date' ";
                 
         $res1 = mysqli_query($conn, $check_user);
@@ -51,13 +53,13 @@
 			die();
 			//header('location:trainTableAdd.php');
         }
-	$sqln = "SELECT `db_Sleeper`, `db_AC` FROM `train` where `db_trainNo` = '$trainNo' ";
+		$sqln = "SELECT `db_Sleeper`, `db_AC` FROM `train` where `db_trainNo` = '$trainNo' ";
 		$resn = mysqli_query($conn, $sqln);
 		$row = mysqli_fetch_assoc($resn);
 		if($row["db_AC"]<$ACcoach||$row["db_Sleeper"]<$SleeperCoach)
 		{
 			?>
-			<h2> "Exceeded the Maximum No of Coaches";
+			<h2> "Exceeded the Maximum No of Coaches"
 			</h2>
 			<?php
 			die();
@@ -70,7 +72,7 @@
 			die('Invalid query: ' . mysqli_error($conn));
 		}
 		
-		if (mysqli_query($conn, $sqlq)) {
+		//if (mysqli_query($conn, $sqlq)) {
 			
 			for($j = 1;$j<=$ACcoach;$j++){
 				
@@ -101,10 +103,10 @@
 				}
 			}
 		
-		} 
+	/*	} 
 		else {
 		  echo "Error : " . mysqli_error($conn);
-		}
+		}*/
 		header('location:success.php');
     }
 	else

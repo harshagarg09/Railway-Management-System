@@ -38,7 +38,7 @@
 			//header('location:trainTableAdd.php');
 			die();
 		}
-		$check_user = " SELECT * FROM traincoach WHERE db_trainNo = '$trainNo' and db_date ='$date' ";
+		$check_user = " SELECT * FROM booking_system WHERE db_trainNo = '$trainNo' and db_date ='$date' ";
                 
         $res1 = mysqli_query($conn, $check_user);
         
@@ -62,7 +62,7 @@
 			<?php
 			die();
 		}
-		$query = "INSERT INTO `traincoach` (`db_trainNo`,`db_AC`,`db_Sleeper`,`db_date`) VALUES ('$trainNo','$ACcoach','$SleeperCoach','$date')";
+		$query = "INSERT INTO `booking_system` (`db_trainNo`,`db_AC`,`db_Sleeper`,`db_date`) VALUES ('$trainNo','$ACcoach','$SleeperCoach','$date')";
 					
 		$res = mysqli_query($conn,$query);
 		if (!$res) {

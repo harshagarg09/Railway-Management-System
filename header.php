@@ -57,6 +57,15 @@ body {
   background-color: #800000;
   color: white;
 }
+  
+  footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+     /* Height of the footer */
+   background-color: black;
+   color: white;
+}
 </style>
 
 <div class="topnav">

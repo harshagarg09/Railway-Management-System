@@ -16,12 +16,23 @@
 		$sleeper = "SL";
 		
 		$today = date( "Y-m-d");
+		$newDate = date('Y-m-d', strtotime('+15 days', strtotime($today)));
 		$dateTimestamp1 = strtotime($date); 
-		$dateTimestamp2 = strtotime($today); 
+		$dateTimestamp2 = strtotime($today);
+		$dateTimestamp3 = strtotime($newDate);
 		if($dateTimestamp1<$dateTimestamp2)
 		{?>
 			<h2 align ="center">
 			<?php echo "Entered the Wrong Date";
+			?></h2>
+			<?php
+			//header('location:trainTableAdd.php');
+			die();
+		}
+		if($dateTimestamp1>$dateTimestamp3)
+		{?>
+			<h2 align ="center">
+			<?php echo "This much advance release of train is not possible";
 			?></h2>
 			<?php
 			//header('location:trainTableAdd.php');

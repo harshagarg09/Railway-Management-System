@@ -51,7 +51,17 @@
 			die();
 			//header('location:trainTableAdd.php');
         }
-		
+	$sqln = "SELECT `db_Sleeper`, `db_AC` FROM `train` where `db_trainNo` = '$trainNo' ";
+		$resn = mysqli_query($conn, $sqln);
+		$row = mysqli_fetch_assoc($resn);
+		if($row["db_AC"]<$ACcoach||$row["db_Sleeper"]<$SleeperCoach)
+		{
+			?>
+			<h2> "Exceeded the Maximum No of Coaches";
+			</h2>
+			<?php
+			die();
+		}
 		$query = "INSERT INTO `traincoach` (`db_trainNo`,`db_AC`,`db_Sleeper`,`db_date`) VALUES ('$trainNo','$ACcoach','$SleeperCoach','$date')";
 					
 		$res = mysqli_query($conn,$query);

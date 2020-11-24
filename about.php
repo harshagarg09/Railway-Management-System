@@ -10,8 +10,8 @@
 <table id="customers">
   <tr>
     <th>Trains</th>
-    <th>No of Sleeper Coach</th>
-    <th>No of AC Coach</th>
+    <th>Arrival</th>
+    <th>Departure</th>
   </tr>
   <?php 
 	$qur="SELECT * FROM `train`";
@@ -20,8 +20,8 @@
 		while($data=mysqli_fetch_array($res)){ ?>
 			<tr>
 			<td><?php echo $data['db_trainNo']; ?></td>
-			<td><?php echo $data['db_Sleeper']; ?></td>
-			<td><?php echo $data['db_AC']; ?></td>
+			<td>" "</td>
+			<td>" "</td>
 			</tr>	
 	<?php }  
 	} ?>  

@@ -25,53 +25,36 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sl`
+-- Table structure for table `train`
 --
 
-CREATE TABLE `sl` (
-  `db_berthNo` int(11) NOT NULL,
-  `db_berthType` varchar(3) NOT NULL
+CREATE TABLE `train` (
+  `db_trainNo` int(3) NOT NULL,
+  `db_Sleeper` int(11) NOT NULL,
+  `db_AC` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sl`
+-- Dumping data for table `train`
 --
 
-INSERT INTO `sl` (`db_berthNo`, `db_berthType`) VALUES
-(1, 'LB'),
-(2, 'MB'),
-(3, 'UB'),
-(4, 'LB'),
-(5, 'MB'),
-(6, 'UB'),
-(7, 'SL'),
-(8, 'SU'),
-(9, 'LB'),
-(10, 'MB'),
-(11, 'UB'),
-(12, 'LB'),
-(13, 'MB'),
-(14, 'UB'),
-(15, 'SL'),
-(16, 'SU'),
-(17, 'LB'),
-(18, 'MB'),
-(19, 'UB'),
-(20, 'LB'),
-(21, 'MB'),
-(22, 'UB'),
-(23, 'SL'),
-(24, 'SU');
+INSERT INTO `train` (`db_trainNo`, `db_Sleeper`, `db_AC`) VALUES
+(101, 4, 2),
+(102, 5, 4),
+(103, 6, 4),
+(104, 8, 5),
+(105, 4, 6);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `sl`
+-- Indexes for table `train`
 --
-ALTER TABLE `sl`
-  ADD PRIMARY KEY (`db_berthNo`);
+ALTER TABLE `train`
+  ADD PRIMARY KEY (`db_trainNo`),
+  ADD UNIQUE KEY `db_trainNo` (`db_trainNo`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -25,53 +25,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sl`
+-- Table structure for table `104`
 --
 
-CREATE TABLE `sl` (
-  `db_berthNo` int(11) NOT NULL,
-  `db_berthType` varchar(3) NOT NULL
+CREATE TABLE `104` (
+  `db_coachType` varchar(3) NOT NULL,
+  `db_BerthNo` int(11) NOT NULL,
+  `db_bookStatus` int(11) NOT NULL,
+  `db_coachNo` int(11) NOT NULL,
+  `db_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `sl`
---
-
-INSERT INTO `sl` (`db_berthNo`, `db_berthType`) VALUES
-(1, 'LB'),
-(2, 'MB'),
-(3, 'UB'),
-(4, 'LB'),
-(5, 'MB'),
-(6, 'UB'),
-(7, 'SL'),
-(8, 'SU'),
-(9, 'LB'),
-(10, 'MB'),
-(11, 'UB'),
-(12, 'LB'),
-(13, 'MB'),
-(14, 'UB'),
-(15, 'SL'),
-(16, 'SU'),
-(17, 'LB'),
-(18, 'MB'),
-(19, 'UB'),
-(20, 'LB'),
-(21, 'MB'),
-(22, 'UB'),
-(23, 'SL'),
-(24, 'SU');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `sl`
+-- Indexes for table `104`
 --
-ALTER TABLE `sl`
-  ADD PRIMARY KEY (`db_berthNo`);
+ALTER TABLE `104`
+  ADD PRIMARY KEY (`db_coachType`,`db_BerthNo`,`db_coachNo`,`db_date`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

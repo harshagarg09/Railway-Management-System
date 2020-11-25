@@ -14,17 +14,33 @@
             $result_pass = mysqli_query($conn, $check_password);
             if(mysqli_num_rows($result_pass)>0){
                 $_SESSION['username'] = $username;
-                echo "Login Successful!!";
-                header('location:userDashboard.php');
+                $a = $_SESSION['status'];
+            $b = $_SESSION['text'];
+            $c = $_SESSION['status_code'];
+        echo "<script>
+            Swal.fire(
+               '$a',
+               '$b',
+               '$c'
+            )
+        </script>";
+        unset($_SESSION['status']);
+               // echo "Login Successful!!";
+                header('location:user/userDashboard.php');
             }
             else{
-                echo "Wrong password !! Try again !!";
+                $_SESSION['status'] = "Wrong password!";
+                $_SESSION['text'] =  "Try again...";
+                $_SESSION['status_code'] = 'warning';
+                echo "Error";
             }
            
         }
         else{
+            $_SESSION['status'] = " Not an Existing user!";
+            $_SESSION['text'] =  "Signup!!";
+            $_SESSION['status_code'] = 'error';
              echo "ERROR !!! Not an Existing user || Signup!!";
-
         }
       
         $conn->close();

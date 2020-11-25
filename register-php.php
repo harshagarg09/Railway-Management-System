@@ -14,18 +14,26 @@
         $check_duplicate_email = mysqli_query($conn, $q_email);
         
         if(mysqli_num_rows($check_duplicate_email)>0){
-            echo "ERROR !!! Email id already exists!! Existing users Login!!";
+            $_SESSION['status'] = "Email id already exists!";
+            $_SESSION['text'] =  "Existing users Login!!";
+            $_SESSION['status_code'] = 'warning';
+            echo "ERROR !!";
         }
         else{
               $sql = "INSERT INTO `users`(`username`,`email`,`address`,`phone`,`CC`,`password`) VALUES('$username','$email','$address','$phone','$credit','$password')";
-               // $check = mysqli_query($conn,$sql);
         
                 if($conn->query($sql) == TRUE){
+                    $_SESSION['status'] = "Registration successful!";
+                    $_SESSION['text'] =  "";
+                    $_SESSION['status_code'] = 'success';
                     echo "Saved successfull";
                 }
                 else{
                    // echo "ERRRorr : $sql <br> $conn->error";
-                    echo "ERROR !!! Username already exists!!";
+                    $_SESSION['status'] = "Username already exists!";
+                    $_SESSION['text'] =  "Please register with different username";
+                    $_SESSION['status_code'] = 'error';
+                    echo "ERROR !!!";
                 }
             }
       

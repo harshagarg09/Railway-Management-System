@@ -1,7 +1,7 @@
 <?php include_once('connection.php'); ?>
 <?php include_once('register-php.php')?>
 <?php include_once('login-php.php')?>
-
+<?php include("scripts.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -104,7 +104,6 @@ form{
             </form>
        </div>
 </div>
-
 
 </body>
 </html>
